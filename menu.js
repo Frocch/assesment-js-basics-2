@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'Margherita',
+    price: 15,
+    category: 'entree',
+    popularity: 10,
+    rating: 10,
+    tags: ['Classic', 'Cheese', 'Vegetarian', 'Traditional', 'Favorite']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,7 @@
 
 //CODE HERE
 
+// console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,6 +72,9 @@
 */
 
 //CODE HERE
+
+const {price} = pizza
+// console.log(`$${price}`)
 
 
 /*
@@ -74,6 +86,8 @@
 
 //CODE HERE
 
+const {category} = pizza
+// console.log(`${category}`)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +103,48 @@
 
 //CODE HERE
 
-
+const foodArr = [
+    {
+        'name': 'Margherita',
+        'price': 15,
+        'category': 'entree',
+        'popularity': 10,
+        'rating': 10,
+        'tags': ['Classic', 'Cheese', 'Vegetarian', 'Traditional', 'Favorite']
+    },
+    {
+        'name': 'Sausage',
+        'price': 18,
+        'category': 'entree',
+        'popularity': 8,
+       'rating': 8,
+        'tags': ['Favorite', 'Sausage', 'Fresh']
+    },
+    {
+        'name': 'Cuatro Formaggio',
+        'price': 19,
+        'category': 'entree',
+        'popularity': 9,
+        'rating': 10,
+        'tags': ['Classic', 'Cheese', 'Vegetarian', 'Kids', 'Favorite']
+    },
+    {
+        'name': 'Pepperoni',
+        'price': 17,
+        'category': 'entree',
+        'popularity': 9,
+        'rating': 9,
+        'tags': ['Classic', 'Pepperoni', 'Traditional', 'Favorite']
+    },
+    {
+        'name': 'Vegan',
+        'price': 17,
+        'category': 'entree',
+        'popularity': 7,
+        'rating': 7,
+        'tags': ['Vegan', 'Vegetarian', 'Vegetable', 'Organic', 'No Cheese']
+    }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,9 +160,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(elem => elem.tags.includes('Classic'))
 
-
+// console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -150,6 +205,25 @@
 
 //CODE HERE
 
+const filterByProperty = (property, num, type) => {
+    // if (type === 'above') {
+    //     console.log('if', property, type, num)
+    //    return filteredArr = foodArr.filter(elem => elem.property > num)
+    // } else if ( type === 'below') {
+    //     console.log('else if', property, type, num)
+    //     return filteredArr = foodArr.filter(elem => property < num)
+    // }
+    filteredArr = foodArr.filter(elem => {
+        if (type === 'above') {
+            console.log(elem[property])
+            foodArr.push(elem[property] > num)
+        } else if (type === 'below') {
+            console.log(elem[property])
+            foodArr.push(elem[property] < num)
+        }
+    }) 
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +233,5 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('price', 18, 'below'))

@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
+
+
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+// console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +58,8 @@ const cart = [
 
 //CODE HERE
 
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * (tax + 1)) - couponValue
+console.log(calcFinalPrice(summedPrice, 10, 0.6))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +83,17 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+Example:
 
+Full Name: String
+Date of Birth: String
+Address: String
+Phone Number: String
+Email Address: String
+
+I chose these properties since it is what a restaurant would need as basic information for a Customer who wants to order online. Full name for identifying purposes, date of birth to determine the customer's age and for any special birthday offers to be sent out prior to said date,
+address for delivery purposes, phone number in case the restaurant needs to reach out to the customer with questions or changes regarding the order, and email address as a secondary method of contact and to send out receipts, offers and/or promotional material if the customer signs up for such emails.
+I chose to use them all as strings, since none will be used as numbers. My only doubts is how to store dates in such customer profiles, maybe there is a better way to do it rather than storing in a string.
 */
 
 /*
@@ -88,3 +102,11 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: "Laura Baker",
+    dob: "9/20/1990",
+    address: "659 S 15th St, New York, NY 95698",
+    phone: "555-698-1325",
+    email: "lbaker@example.com"
+}
