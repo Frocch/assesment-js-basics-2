@@ -206,20 +206,11 @@ const filteredFood = foodArr.filter(elem => elem.tags.includes('Classic'))
 //CODE HERE
 
 const filterByProperty = (property, num, type) => {
-    // if (type === 'above') {
-    //     console.log('if', property, type, num)
-    //    return filteredArr = foodArr.filter(elem => elem.property > num)
-    // } else if ( type === 'below') {
-    //     console.log('else if', property, type, num)
-    //     return filteredArr = foodArr.filter(elem => property < num)
-    // }
-    filteredArr = foodArr.filter(elem => {
+    filteredArr = foodArr.filter((elem) => {
         if (type === 'above') {
-            console.log(elem[property])
-            foodArr.push(elem[property] > num)
+             return (elem[property] > num)
         } else if (type === 'below') {
-            console.log(elem[property])
-            foodArr.push(elem[property] < num)
+            return (elem[property] < num)
         }
     }) 
     return filteredArr
